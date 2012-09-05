@@ -76,6 +76,7 @@ Teleop::Teleop(int argc, char**argv) :
   ros::Duration(1).sleep();
   ROS_INFO("Joy topic set to: %s", turtlesim_pioneer::joy_topic.c_str());
   ROS_INFO("Velocity topic set to: %s", turtlesim_pioneer::velocity_topic.c_str());
+  ROS_INFO("Velocity sub topic set to: %s", turtlesim_pioneer::velocity_sub_topic.c_str());
   ROS_INFO("Goal topic set to: %s", turtlesim_pioneer::goal_topic.c_str());
   ROS_INFO("Goal cancel topic set to: %s", turtlesim_pioneer::goal_cancel_topic.c_str());
   ROS_INFO("axis angular set to: %d", angular_);
@@ -88,6 +89,8 @@ Teleop::Teleop(int argc, char**argv) :
 
   joy_subscriber_ = n_.subscribe<sensor_msgs::Joy>(turtlesim_pioneer::joy_topic, queue_size_, &Teleop::joyCallback, this);
   goal_subscriber_ = n_.subscribe<move_base_msgs::MoveBaseActionGoal>(turtlesim_pioneer::goal_topic, queue_size_, &Teleop::goalCallback, this);
+  velocity_subscriber_ = n_.subscribe<geometry_msgs::Twist>(turtlesim_pioneer::velocity_sub_topic, queue_size_, &Teleop::velocityCallback, this);
+
   velocity_publisher_ = n_.advertise<turtlesim::Velocity>(velocity_topic, queue_size_);
   goal_cancel_publisher_ = n_.advertise<actionlib_msgs::GoalID>(goal_cancel_topic, queue_size_);
 
@@ -98,6 +101,14 @@ Teleop::Teleop(int argc, char**argv) :
 void Teleop::goalCallback(const move_base_msgs::MoveBaseActionGoal::ConstPtr& goal){
   goal_ = goal->goal_id;
   goal_set_ = true;
+}
+
+void Teleop::velocityCallback(const geometry_msgs::Twist::ConstPtr& velocity){
+  turtlesim::Velocity turtle_velocity;
+  turtle_velocity.linear = velocity->linear.x;
+  turtle_velocity.angular = velocity->angular.z;
+
+  velocity_publisher_.publish(turtle_velocity);
 }
 
 void Teleop::joyCallback(const sensor_msgs::Joy::ConstPtr& joy){

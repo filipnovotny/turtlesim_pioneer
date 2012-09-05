@@ -1,0 +1,29 @@
+global_frame: map
+robot_base_frame: /robot_pos
+update_frequency: 5.0
+publish_frequency: 1.0
+
+#set if you want the voxel map published
+publish_voxel_map: true
+
+#set to true if you want to initialize the costmap from a static map
+static_map: true
+
+#begin - COMMENT these lines if you set static_map to true
+rolling_window: false
+#end - COMMENT these lines if you set static_map to true
+
+#map_type: costmap
+track_unknown_space: true
+
+
+transform_tolerance: 0.3
+obstacle_range: 4.5
+max_obstacle_height: 80.0
+raytrace_range: 4.5
+#footprint: [[-0.325, -0.325], [-0.325, 0.325], [0.325, 0.325], [0.46, 0.0], [0.325, -0.325]]
+robot_radius: 0.18
+footprint_padding: 0.01
+inflation_radius: 0.25
+cost_scaling_factor: 10.0
+

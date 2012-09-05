@@ -56,16 +56,21 @@ namespace turtlesim_pioneer
 {
   extern std::string joy_topic;
   extern std::string velocity_topic;
+  extern std::string velocity_sub_topic;
 
   extern std::string cancel_topic;
   extern std::string goal_topic;
   extern std::string goal_cancel_topic;
+  extern std::string odometry_topic;
+  extern std::string odometry_pub_topic;
 
   extern std::string axis_linear_param;
   extern std::string axis_angular_param;
   extern std::string scale_linear_param;
   extern std::string scale_angular_param;
 
+  extern std::string parent_frame_param;
+  extern std::string child_frame_param;
   extern std::string offset_x_param;
   extern std::string offset_y_param;
   extern std::string offset_z_param;

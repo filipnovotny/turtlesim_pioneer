@@ -1,0 +1,203 @@
+Background\ ColorB=0
+Background\ ColorG=0
+Background\ ColorR=0
+Camera\ Config=1.5398 1.57227 28.3823 4.04596 6.45867 -6.63602
+Camera\ Type=rviz::OrbitViewController
+Fixed\ Frame=/world
+Goal.Alpha=1
+Goal.ColorB=0.498039
+Goal.ColorG=1
+Goal.ColorR=1
+Goal.Enabled=1
+Goal.Head\ Length=0.3
+Goal.Head\ Radius=0.4
+Goal.Shaft\ Length=0.5
+Goal.Shaft\ Radius=0.1
+Goal.Shape=0
+Goal.Topic=/RosAria/move_base/current_goal
+Grid.Alpha=0.5
+Grid.Cell\ Size=1
+Grid.ColorB=0
+Grid.ColorG=0
+Grid.ColorR=0.5
+Grid.Enabled=1
+Grid.Line\ Style=0
+Grid.Line\ Width=0.03
+Grid.Normal\ Cell\ Count=0
+Grid.OffsetX=0
+Grid.OffsetY=0
+Grid.OffsetZ=0
+Grid.Plane=0
+Grid.Plane\ Cell\ Count=10
+Grid.Reference\ Frame=<Fixed Frame>
+Map.Alpha=0.7
+Map.Draw\ Behind=0
+Map.Enabled=0
+Map.Topic=/map
+Markers.Enabled=1
+Markers.Marker\ Topic=visualization_marker
+Markers.Queue\ Size=100
+Odometry.Angle\ Tolerance=0.1
+Odometry.ColorB=0.498039
+Odometry.ColorG=1
+Odometry.ColorR=1
+Odometry.Enabled=1
+Odometry.Keep=100
+Odometry.Length=0.3
+Odometry.Position\ Tolerance=0.1
+Odometry.Topic=/odom
+Polygon.Alpha=1
+Polygon.ColorB=1
+Polygon.ColorG=0.333333
+Polygon.ColorR=1
+Polygon.Enabled=1
+Polygon.Topic=/RosAria/move_base/global_costmap/robot_footprint
+Property\ Grid\ Splitter=913,84
+Property\ Grid\ State=expanded=.Global Options,Markers.Enabled,Polygon.Enabled,Polygon.Status,obstacles.Enabled,Unknown zone.Enabled,inflated obstacles.Enabled,Odometry.Enabled,global plan.Enabled,Map.Enabled,local plan.Enabled,plan.Enabled,local obstacles.Enabled,local inflated.Enabled,whatever1.Enabled;splitterratio=0.409292
+QMainWindow=000000ff00000000fd0000000300000000000001bb00000437fc0200000002fb0000000c00430061006d006500720061000000001d000001e00000000000000000fb000000100044006900730070006c006100790073010000001d00000437000000ee00ffffff00000001000001a500000437fc0200000003fb0000001e0054006f006f006c002000500072006f0070006500720074006900650073010000001d000001190000006700fffffffb0000000a00560069006500770073010000013c000001f9000000bb00fffffffb0000001200530065006c0065006300740069006f006e010000033b000001190000006700ffffff00000003000007800000003efc0100000001fb0000000800540069006d0065010000000000000780000002bf00ffffff000004140000043700000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+TF.All\ Enabled=1
+TF.Enabled=1
+TF.Frame\ Timeout=15
+TF.Marker\ Scale=1
+TF.Show\ Arrows=1
+TF.Show\ Axes=1
+TF.Show\ Names=1
+TF.Update\ Interval=0
+Target\ Frame=<Fixed Frame>
+Tool\ 2D\ Nav\ GoalTopic=/move_base_simple/goal
+Tool\ 2D\ Pose\ EstimateTopic=initialpose
+Unknown\ zone.Alpha=0.5
+Unknown\ zone.ColorB=0.498039
+Unknown\ zone.ColorG=0.333333
+Unknown\ zone.ColorR=0.333333
+Unknown\ zone.Enabled=0
+Unknown\ zone.Topic=/move_base/global_costmap/unknown_space
+global\ plan.Alpha=0.5
+global\ plan.ColorB=0
+global\ plan.ColorG=0
+global\ plan.ColorR=0.666667
+global\ plan.Enabled=1
+global\ plan.Topic=/move_base/TrajectoryPlannerROS/global_plan
+inflated\ obstacles.Alpha=1
+inflated\ obstacles.ColorB=1
+inflated\ obstacles.ColorG=1
+inflated\ obstacles.ColorR=0.333333
+inflated\ obstacles.Enabled=1
+inflated\ obstacles.Topic=/move_base/global_costmap/inflated_obstacles
+local\ inflated.Alpha=1
+local\ inflated.ColorB=1
+local\ inflated.ColorG=1
+local\ inflated.ColorR=0.666667
+local\ inflated.Enabled=0
+local\ inflated.Topic=/move_base/local_costmap/inflated_obstacles
+local\ obstacles.Alpha=1
+local\ obstacles.ColorB=0
+local\ obstacles.ColorG=1
+local\ obstacles.ColorR=0.1
+local\ obstacles.Enabled=0
+local\ obstacles.Topic=/move_base/local_costmap/obstacles
+local\ plan.Alpha=1
+local\ plan.ColorB=1
+local\ plan.ColorG=0
+local\ plan.ColorR=0
+local\ plan.Enabled=1
+local\ plan.Topic=/move_base/TrajectoryPlannerROS/local_plan
+obstacles.Alpha=1
+obstacles.ColorB=0
+obstacles.ColorG=1
+obstacles.ColorR=0.1
+obstacles.Enabled=1
+obstacles.Topic=/move_base/global_costmap/obstacles
+plan.Alpha=1
+plan.ColorB=1
+plan.ColorG=0.666667
+plan.ColorR=1
+plan.Enabled=0
+plan.Topic=/move_base/NavfnROS/plan
+whatever1..AxisColorAutocompute\ Value\ Bounds=1
+whatever1..AxisColorAxis=2
+whatever1..AxisColorMax\ Value=10
+whatever1..AxisColorMin\ Value=-10
+whatever1..AxisColorUse\ Fixed\ Frame=1
+whatever1..FlatColorColorB=1
+whatever1..FlatColorColorG=1
+whatever1..FlatColorColorR=1
+whatever1..IntensityAutocompute\ Intensity\ Bounds=1
+whatever1..IntensityChannel\ Name=intensity
+whatever1..IntensityMax\ ColorB=1
+whatever1..IntensityMax\ ColorG=1
+whatever1..IntensityMax\ ColorR=1
+whatever1..IntensityMax\ Intensity=4096
+whatever1..IntensityMin\ ColorB=0
+whatever1..IntensityMin\ ColorG=0
+whatever1..IntensityMin\ ColorR=0
+whatever1..IntensityMin\ Intensity=0
+whatever1..IntensityUse\ full\ RGB\ spectrum=0
+whatever1.Alpha=1
+whatever1.Billboard\ Size=0.01
+whatever1.Color\ Transformer=
+whatever1.Decay\ Time=0
+whatever1.Enabled=1
+whatever1.Position\ Transformer=
+whatever1.Queue\ Size=10
+whatever1.Selectable=1
+whatever1.Style=1
+whatever1.Topic=/move_base/TrajectoryPlannerROS/cost_cloud
+[Display0]
+ClassName=rviz::TFDisplay
+Name=TF
+[Display1]
+ClassName=rviz::MarkerDisplay
+Name=Markers
+[Display10]
+ClassName=rviz::MapDisplay
+Name=Map
+[Display11]
+ClassName=rviz::PathDisplay
+Name=local plan
+[Display12]
+ClassName=rviz::PathDisplay
+Name=plan
+[Display13]
+ClassName=rviz::GridCellsDisplay
+Name=local obstacles
+[Display14]
+ClassName=rviz::GridCellsDisplay
+Name=local inflated
+[Display15]
+ClassName=rviz::PointCloud2Display
+Name=whatever1
+[Display2]
+ClassName=rviz::GridDisplay
+Name=Grid
+[Display3]
+ClassName=rviz::PolygonDisplay
+Name=Polygon
+[Display4]
+ClassName=rviz::GridCellsDisplay
+Name=obstacles
+[Display5]
+ClassName=rviz::GridCellsDisplay
+Name=Unknown zone
+[Display6]
+ClassName=rviz::GridCellsDisplay
+Name=inflated obstacles
+[Display7]
+ClassName=rviz::OdometryDisplay
+Name=Odometry
+[Display8]
+ClassName=rviz::PathDisplay
+Name=global plan
+[Display9]
+ClassName=rviz::PoseDisplay
+Name=Goal
+[TF.Frames.]
+map.Enabled=1
+odom.Enabled=1
+robot_pos.Enabled=1
+world.Enabled=1
+[Window]
+Height=1176
+Width=1920
+X=-105
+Y=-342

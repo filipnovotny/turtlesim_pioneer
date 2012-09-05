@@ -1,3 +1,49 @@
 <launch>
+	<node pkg="map_server" type="map_server" name="map_server" args="$(find turtlesim_pioneer)/launch/config/map_server.yaml" output="screen" />
 
+<!--
+	<node name="costmap_node" pkg="costmap_2d" type="costmap_2d_node" >
+	      <rosparam file="$(find turtlesim_pioneer)/launch/config/costmap_from_server.yaml" command="load" ns="costmap" />
+    	</node>  
+-->
+
+	<node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+	      <rosparam file="$(find turtlesim_pioneer)/launch/config/costmap_from_server.yaml" command="load" ns="global_costmap" />
+	      <rosparam file="$(find turtlesim_pioneer)/launch/config/costmap_from_server.yaml" command="load" ns="local_costmap" />
+
+	      <rosparam file="$(find turtlesim_pioneer)/launch/config/base_local_planner.yaml" command="load" />
+
+	</node>
+
+	<node name="visualizer" pkg="rviz" type="rviz" args="--display-config $(find turtlesim_pioneer)/launch/rviz/map.vcg" />
+	<node pkg="turtlesim" type="turtlesim_node" name="sim"/>
+
+  	<node pkg="turtlesim_pioneer" type="odometry_frame_publisher" name="odometry_convertor" args="odometry:=/turtle1/pose odometry_pub:=/odom">
+    	      <param name="child_frame" value="/robot_pos" type="string" />
+    	      <param name="parent_frame" value="/odom" type="string" />
+
+	      <param name="offset_x" value="0." type="double" />
+	      <param name="offset_y" value="0." type="double" />
+	      <param name="offset_z" value="0." type="double" />
+      	</node>
+
+	<node pkg="tf" type="static_transform_publisher" name="odometry_frame_broadcaster" args="0 0 0 0.0 0.0 0.0 /world /odom 100" />
+	<node pkg="tf" type="static_transform_publisher" name="map_frame_broadcaster" args="0 0 0 0.0 0.0 0.0 /world /map 100" />
+
+	<!-- joy node --> 
+  	<node respawn="true" pkg="joy" type="joy" name="gamepad" >
+	      <param name="dev" type="string" value="/dev/input/js0" />
+	      <param name="deadzone" value="0.12" />
+	</node>
+
+ 
+	<node pkg="turtlesim_pioneer" type="joystick_teleop" name="teleop" args="joy:=/joy velocity:=/turtle1/command_velocity goal:=/move_base/goal cancel:=/move_base/cancel velocity_sub:=/cmd_vel">
+  	     <!-- Axes -->
+    	     <param name="axis_linear" value="3" type="int"/>
+	     <param name="axis_angular" value="2" type="int"/>
+    	     <param name="cancel" value="0" type="int"/>
+    	     <param name="scale_linear" value="1" type="double"/>
+    	     <param name="scale_angular" value="1" type="double"/>    
+  	</node>
+	
 </launch>

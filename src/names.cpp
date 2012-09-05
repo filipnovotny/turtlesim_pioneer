@@ -53,7 +53,10 @@
 namespace turtlesim_pioneer
 {
   std::string joy_topic("joy");
+  std::string odometry_topic("odometry");
+  std::string odometry_pub_topic("odometry_pub");
   std::string velocity_topic("velocity");
+  std::string velocity_sub_topic("velocity_sub");
   std::string goal_topic("goal");
   std::string goal_cancel_topic("cancel");
 
@@ -63,6 +66,8 @@ namespace turtlesim_pioneer
   std::string scale_angular_param("scale_angular");
   std::string cancel_param("cancel");
 
+  std::string parent_frame_param("parent_frame");
+  std::string child_frame_param("child_frame");
   std::string offset_x_param("offset_x");
   std::string offset_y_param("offset_y");
   std::string offset_z_param("offset_z");
@@ -71,6 +76,12 @@ namespace turtlesim_pioneer
   void remap(){
     if (ros::names::remap("joy") != "joy")
       joy_topic = ros::names::remap("joy");
+    if (ros::names::remap("odometry_pub") != "odometry_pub")
+      odometry_pub_topic = ros::names::remap("odometry_pub");
+    if (ros::names::remap("odometry") != "odometry")
+      odometry_topic = ros::names::remap("odometry");
+    if (ros::names::remap("velocity_sub") != "velocity_sub")
+       velocity_sub_topic = ros::names::remap("velocity_sub");
     if (ros::names::remap("velocity") != "velocity")
       velocity_topic = ros::names::remap("velocity");
     if (ros::names::remap("cancel") != "cancel")

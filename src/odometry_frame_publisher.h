@@ -43,45 +43,39 @@
  *****************************************************************************/
 
 /*!
- \file camera.h
+ \file OdometryFramePublisher.h
  \brief 
  */
-#include "ros/ros.h"
-#include <sensor_msgs/Joy.h>
-#include <actionlib_msgs/GoalID.h>
-#include <move_base_msgs/MoveBaseActionGoal.h>
-#include <geometry_msgs/Twist.h>
-#include <string>
 
-#ifndef __joystick_TELEOP_H__
-#define __joystick_TELEOP_H__
-namespace turtlesim_pioneer
-{
-class Teleop
-{
-private:
-  ros::NodeHandle n_;
-  ros::AsyncSpinner spinner;
+#ifndef ODOMETRYFRAMEPUBLISHER_H_
+#define ODOMETRYFRAMEPUBLISHER_H_
+#include "turtlesim/Pose.h"
+#include <tf/transform_broadcaster.h>
+#include <nav_msgs/Odometry.h>
 
-  int linear_, angular_, cancel_;
-  double l_scale_, a_scale_;
+namespace turtlesim_pioneer{
+  class OdometryFramePublisher
+  {
+  private:
+    ros::NodeHandle n_;
 
-  actionlib_msgs::GoalID goal_;
-  bool goal_set_;
+    ros::Subscriber odometry_subscriber_;
+    ros::Publisher odometry_publisher_;
+    tf::TransformBroadcaster br_;
 
-  ros::Subscriber joy_subscriber_;
-  ros::Subscriber goal_subscriber_;
-  ros::Subscriber velocity_subscriber_;
-  ros::Publisher velocity_publisher_;
-  ros::Publisher goal_cancel_publisher_;
-  unsigned int queue_size_;
+    unsigned int queue_size_;
 
-  void velocityCallback(const geometry_msgs::Twist::ConstPtr& velocity);
-  void joyCallback(const sensor_msgs::Joy::ConstPtr& joy);
-  void goalCallback(const move_base_msgs::MoveBaseActionGoal::ConstPtr& goal);
-public:
-  Teleop(int argc, char**argv);
-  virtual ~Teleop();
-};
+    std::string child_frame_;
+    std::string parent_frame_;
+    double offset_x_;
+    double offset_y_;
+    double offset_z_;
+
+    void odometryCallback(const turtlesim::Pose::ConstPtr& odometry);
+
+  public:
+    OdometryFramePublisher();
+    virtual ~OdometryFramePublisher();
+  };
 }
-#endif /* CAMERA_H_ */
+#endif /* ODOMETRYFRAMEPUBLISHER_H_ */
